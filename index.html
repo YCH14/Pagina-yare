@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaretzi Calzontzi</title>
+    <link href="/css/estilos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="menu-pestañas">
+            <a class="titulo-pestaña" href="#about">About me</a>
+            <a class="titulo-pestaña" href="#education">Education</a>
+            <a class="titulo-pestaña" href="#languages">Languages</a>
+            <a class="titulo-pestaña" href="#contact">Contact me</a>
+        </div>
+
+        <img src="css/imagen -arriba.jpg"  alt="Fondo" class="background-image">
+        <div class="text greeting" id="greetingText"></div>
+        <div class="text from" id="fromText"></div>
+
+    </div>
+
+<section id="about">
+    <div class="sobre-mi">
+
+        <p class="description">
+            I’m an 8th semester degree student in computer engineering,
+            interested in web development and database administration.
+        </p>
+        
+
+        <div class="seccion-circulo">
+            <span class="texto-circulo" id="whoText">Who am I?</span>
+          </div>
+          
+    </div>
+</section>
+
+<section id="education">
+    <div class="seccion-education">
+      
+      <!-- Cuadro izquierdo -->
+      <div class="cuadro-naranja">
+       <h2 class="education-title">Education</h2>       
+        <!-- Línea vertical con estrellas -->
+        <div class="education-timeline">
+          <div class="line"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+
+        </div>
+      
+        <!-- Contenido de educación -->
+        <div class="education-content">
+
+          <div class="education-item">
+            <h3>2022 - currently</h3>
+            <p>Facultad de Ingeniería <br> UNAM</p>
+          </div>
+          <div class="education-item">
+            <h3>2018 - 2021</h3>
+            <p>ENP 5 "José Vasconcelos"</p>
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Skills al lado derecho -->
+      <div class="skills-section">
+        <h2 class="skills-title">Technical skills</h2>
+        <p class="skills-subtitle">basic knowledge of:</p>
+        <div class="skills-circle">
+          <ul>
+            <li class="skill-text">HTML</li>
+            <li class="skill-text">CSS</li>
+            <li class="skill-text">JavaScript</li>
+            <li class="skill-text">SQL</li>
+            <li class="skill-text">Figma</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+<section id="languages">
+    <div class="title-languages"> LANGUAGES </div>
+    <div class="seccion-circulos-idiomas">
+        <div class="circulo-idiomas">
+            <div class="language-item">
+                <h3>English</h3>
+                <p class="lang-level">B2</p>
+
+            </div>
+
+        </div>
+        <div class="circulo-idiomas">
+            <div class="language-item">
+                <h3>Spanish</h3>
+                <p class="lang-level">Native</p>
+
+            </div>
+        </div>
+        <div class="circulo-idiomas">
+            <div class="language-item">
+                <h3>Italian</h3>
+                <p class="lang-level">A1</p>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<section id="contact" class="seccion-contact-rectangulogrande">
+    <div class="cuadro-contacto">
+        <div class="contact-icon">
+            <h2 class="contact-title">Contact me</h2>
+
+        </div>
+      </div>
+      <div class="rectangulos-contacto">
+        <a href="mailto:yarecalzontzi14@gmail.com" class="cuadro-email contacto-box">
+          email: yarecalzontzi14@gmail.com
+          <div class="icon-wrapper">
+            <i class="fas fa-envelope mail-icon"></i>
+            <i class="fas fa-paper-plane plane-icon"></i>
+          </div>
+        </a>
+
+      
+      
+        <a href="https://instagram.com/yare_c_" target="_blank" class="cuadro-insta contacto-box">
+          <div class="insta-content">
+            Instagram: yare_c_
+            <span class="icon-wrapper">
+              <i class="fab fa-instagram insta-icon"></i>
+              <i class="fas fa-camera-retro flash-icon"></i>
+            </span>
+          </div>
+        </a>
+        
+        
+      
+        <a href="tel:5544423990" class="cuadro-phone contacto-box">
+          phone number
+        </a>
+      </div>
+    </div>
+</section>
+
+  
+  
+<script>
+  // 👋 Texto de saludo que cambia (ya se ejecuta desde que se carga)
+  const greetingEl = document.getElementById('greetingText');
+  const fromEl = document.getElementById('fromText');
+  const translations = [
+    { greeting: "Greetings", from: "from Yare" },
+    { greeting: "Saludos", from: "de Yare" },
+    { greeting: "Bonjour", from: "de Yare" },
+    { greeting: "Ciao", from: "da Yare" },
+    { greeting: "Hallo", from: "von Yare" },
+    { greeting: "こんにちは", from: "由 Yare" },
+    { greeting: "안녕하세요", from: "Yare 로부터" },
+    { greeting: "Olá", from: "por Yare" },
+    { greeting: "مرحبا", from: "من Yare" },
+  ];
+  let currentIndex = 0;
+  function typeTextSync(greetingText, fromText, speed = 100) {
+    greetingEl.textContent = "";
+    fromEl.textContent = "";
+    let i = 0;
+    const maxLen = Math.max(greetingText.length, fromText.length);
+    const interval = setInterval(() => {
+      if (i < greetingText.length) greetingEl.textContent += greetingText.charAt(i);
+      if (i < fromText.length) fromEl.textContent += fromText.charAt(i);
+      i++;
+      if (i >= maxLen) clearInterval(interval);
+    }, speed);
+  }
+  function updateTexts() {
+    const { greeting, from } = translations[currentIndex];
+    typeTextSync(greeting, from);
+    currentIndex = (currentIndex + 1) % translations.length;
+  }
+  updateTexts();
+  setInterval(updateTexts, 3000);
+
+  // 👤 Texto en círculo (Who am I?)
+  const whoText = document.getElementById("whoText");
+  const frases = ["Who am I?", "Creative 💡", "Curious 🔍", "Developer 💻", "Problem Solver 🧠"];
+  let index = 0;
+  function updateWhoText() {
+    whoText.style.opacity = 0;
+    setTimeout(() => {
+      whoText.textContent = frases[index];
+      whoText.style.opacity = 1;
+      index = (index + 1) % frases.length;
+    }, 300);
+  }
+  setInterval(updateWhoText, 2000);
+
+  // 🌟 Education y Skills animadas con IntersectionObserver
+  function typeSkillsSequentially(elements) {
+    let current = 0;
+    function typeNext() {
+      if (current >= elements.length) return;
+      const el = elements[current];
+      const fullText = el.textContent;
+      el.textContent = "";
+      el.classList.add("appear");
+      let charIndex = 0;
+      const interval = setInterval(() => {
+        el.textContent += fullText.charAt(charIndex);
+        charIndex++;
+        if (charIndex === fullText.length) {
+          clearInterval(interval);
+          current++;
+          setTimeout(typeNext, 300);
+        }
+      }, 80);
+    }
+    typeNext();
+  }
+
+  const observerEducation = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stars = document.querySelectorAll(".star");
+        const items = document.querySelectorAll(".education-item");
+        const skillTexts = document.querySelectorAll(".skill-text");
+        stars.forEach((star, index) => {
+          setTimeout(() => {
+            star.classList.add("appear");
+            items[index].classList.add("appear");
+            if (index === stars.length - 1) {
+              setTimeout(() => {
+                typeSkillsSequentially(skillTexts);
+              }, 500);
+            }
+          }, index * 600);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observerEducation.observe(document.querySelector('#education'));
+
+  // 🌍 Languages: solo agregamos la clase cuando entra en pantalla
+  const observerLanguages = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.circulo-idiomas').forEach(el => el.classList.add('appear'));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observerLanguages.observe(document.querySelector('#languages'));
+
+  // 📩 Contacto animaciones
+  const observerContact = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.contacto-box').forEach(box => box.classList.add('appear'));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observerContact.observe(document.querySelector('#contact'));
+
+  // 🗣 Idiomas (hover frases)
+  const frasesIdioma = {
+    english: ["Nice to meet you!", "How are you?", "See you soon!"],
+    spanish: ["¡Hola!", "¿Cómo estás?", "Hasta luego"],
+    italian: ["Ciao!", "Come stai?", "A presto!"]
+  };
+  const nivelesOriginales = ["B2", "Nativo", "A1"];
+  document.querySelectorAll(".circulo-idiomas").forEach((circle, index) => {
+    const lang = ["english", "spanish", "italian"][index];
+    const levelEl = circle.querySelector(".lang-level");
+    circle.addEventListener("mouseenter", () => {
+      const frase = frasesIdioma[lang][Math.floor(Math.random() * frasesIdioma[lang].length)];
+      levelEl.style.fontSize = "1.5rem";
+      levelEl.textContent = frase;
+    });
+    circle.addEventListener("mouseleave", () => {
+      levelEl.textContent = nivelesOriginales[index];
+      levelEl.style.fontSize = "2.3rem";
+    });
+  });
+
+  // 🧠 Tooltips (ya activos por defecto)
+  document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll('.contacto-box');
+    boxes.forEach(box => {
+      if (box.classList.contains('cuadro-email')) {
+        box.setAttribute('data-tooltip', 'Click to send an email');
+      } else if (box.classList.contains('cuadro-insta')) {
+        box.setAttribute('data-tooltip', 'View Instagram profile');
+      } else if (box.classList.contains('cuadro-phone')) {
+        box.setAttribute('data-tooltip', 'Click to call');
+      }
+    });
+  });
+</script>
+
+  
+
+</body>
+</html>
